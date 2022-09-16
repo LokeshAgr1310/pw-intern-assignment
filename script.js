@@ -121,7 +121,9 @@ const showFilesData = () => {
         fileTable.innerHTML = tableHTML;
 
         // removing the unwanted character
-        fileTable?.firstChild.remove();
+        if (JSON.parse(localStorage.getItem("files") || "[]")?.length > 1) {
+            fileTable?.firstChild.remove();
+        }
 
     }
 };
