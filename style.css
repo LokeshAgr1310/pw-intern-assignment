@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&display=swap");
+
+/* ----------------------------  Initial Styling  ------------------------ */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* -----------------------------------  Animations  -------------------------------- */
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bounce-animation {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* -------------------------------------   Header Styling  ---------------------------------- */
+
+.nav-wrapper {
+  padding: 0.625rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0 0.75rem;
+}
+
+.logo {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-right: 1.25rem;
+  padding: 0.625rem;
+  gap: 0 1.25rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: rgb(51 65 85);
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: black;
+  transform: scale(1.1);
+}
+
+/* ------------------------------   Main Container Styling  ---------------------------------- */
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: rgb(17 24 39);
+  color: white;
+}
+
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 85%;
+  padding: 2.5rem 0px;
+}
+
+/* ----------------------------------  File Section Styling  --------------------------------- */
+
+.file-section {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem;
+  margin-top: 2rem;
+  gap: 0 5rem;
+  height: 100%;
+}
+
+/* ------------------------------   File Section > Left-Side Styling  -------------------------- */
+
+.content-wrapper {
+  flex-basis: 55%;
+}
+
+.heading {
+  font-size: 3rem;
+}
+
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.625rem;
+  margin-top: 1rem;
+}
+
+/* --------------------------------   File Section > Right-Side Styling  ----------------------- */
+
+.file-input-wrapper {
+  flex-basis: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  gap: 1rem 0;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1px);
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.file-input-wrapper h2 {
+  font-size: 1.8rem;
+}
+
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+}
+
+.custom-label {
+  background: linear-gradient(270deg, #00dbd8 0%, #b133ff 100%);
+  color: white;
+  padding: 0.75rem;
+  letter-spacing: 0.1em;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.file-chosen {
+  font-size: 0.875rem;
+}
+
+/* ---------------------------------   Table Section Styling  ------------------------------- */
+
+.table-section {
+  margin-top: 3.5rem;
+  padding: 0.625rem 1.25rem;
+}
+
+.table-section h2 {
+  letter-spacing: 0.05em;
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  display: inline;
+  padding-right: 0.5rem;
+  border-bottom: 4px dashed white;
+}
+
+.file-table-wrapper {
+  margin-top: 3.5rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.dynamic-file-table {
+  width: 100%;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.dynamic-file-table th,
+td {
+  padding: 10px 0px;
+  border-bottom: 1px solid rgb(51 65 85);
+  letter-spacing: 0.05em;
+}
+
+.dynamic-file-table tbody {
+  background-color: rgb(30 41 59);
+}
+
+.more-info-btn {
+  background-color: rgb(8 145 178);
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  border-radius: 9px;
+  outline: none;
+  border: none;
+}
+
+.no-files-para {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* ------------------------------  Implementing toolitip -------------------------------------- */
+
+.tooltip-wrapper {
+  position: relative;
+}
+
+.tooltip-content {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  bottom: 40px;
+  left: -100px;
+  background-color: rgb(17 24 39);
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  border: 1px solid rgb(51 65 85);
+  border-radius: 10px;
+}
+
+.tooltip-content::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  bottom: -8px;
+  left: 50%;
+  background-color: rgb(17 24 39);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.tooltip-wrapper:hover .tooltip-content {
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.tooltip-content-list {
+  width: 200px;
+  list-style: none;
+  font-size: 0.75rem;
+}
+
+.tooltip-content-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.border-b {
+  border-bottom: 1px solid rgb(51 65 85);
+  padding-bottom: 15px;
+}
+
+/* ----------------------------------  Media Queries ----------------------------------------------- */
+
+@media screen and (max-width: 936px) {
+  .container-wrapper {
+    max-width: 90%;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+  .file-section {
+    padding: 0.625rem 0.5rem;
+    gap: 3rem;
+  }
+
+  .file-input-wrapper h2 {
+    font-size: 1.35rem;
+  }
+
+  .table-section {
+    padding: 0.625rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 676px) {
+  .file-section {
+    flex-direction: column;
+  }
+
+  .file-input-wrapper {
+    padding: 1rem;
+  }
+
+  .no-files-para {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dynamic-file-table {
+    font-size: 12px;
+  }
+
+  .table-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .no-files-para {
+    font-size: 1.2rem;
+    /* text-align: start; */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container-wrapper {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+  .lead {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+  }
+
+  .nav-wrapper {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .nav-left h2 {
+    font-size: 1.1rem;
+  }
+
+  .nav-right {
+    margin-right: 0.5rem;
+    padding: 0.625rem 0;
+    gap: 0 0.875rem;
+  }
+
+  .icon {
+    font-size: 1.25rem;
+  }
+
+  .table-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .custom-label {
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.875rem;
+  }
+
+  .more-info-btn {
+    font-size: 0.65rem;
+    padding: 0.35rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .table-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .heading {
+    font-size: 1.75rem;
+  }
+
+  .file-input-wrapper h2 {
+    font-size: 1.1rem;
+  }
+
+  .table-section {
+    padding: 0.625rem 0;
+  }
+
+  .more-info-btn {
+    font-size: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  .no-files-para {
+    font-size: 1rem;
+    /* text-align: start; */
+  }
+}

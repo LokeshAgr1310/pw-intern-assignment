@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PW Intern Assignment</title>
+
+    <link rel="icon" href="logo.png" type="image/png" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <nav class="nav-wrapper">
+      <div class="nav-left">
+        <img src="logo.png" alt="logo" class="logo" />
+        <h2>ASSIGNMENT</h2>
+      </div>
+
+      <div class="nav-right">
+        <i class="fa-brands fa-github icon"></i>
+        <i class="fa-brands fa-linkedin icon"></i>
+      </div>
+    </nav>
+
+    <section class="container">
+      <!-- Input Field Container -->
+      <div class="container-wrapper">
+        <div class="file-section">
+          <div class="content-wrapper">
+            <h1 class="heading">Hey PWians <span class="wave">👋</span></h1>
+            <p class="lead">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt
+              harum consectetur sapiente. Id explicabo, praesentium est,
+              commodi, alias omnis ipsam minus repellat molestiae eligendi
+              quidem rerum. Corrupti repudiandae ad reprehenderit!
+            </p>
+          </div>
+
+          <div class="file-input-wrapper">
+            <h2>Upload Your File <span class="bounce">👇</span></h2>
+            <input
+              type="file"
+              name="custom-file-input"
+              id="custom-file-btn"
+              class="custom-file-btn"
+              hidden
+            />
+            <label for="custom-file-btn" class="custom-label"
+              >CHOOSE FOLDER</label
+            >
+            <span class="file-chosen" id="file-chosen"></span>
+          </div>
+        </div>
+        <!-- Table Container -->
+        <div class="table-section">
+          <h2>FILE INFORMATION</h2>
+          <div class="file-table-wrapper" id="file-table-wrapper"></div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
