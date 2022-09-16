@@ -56,7 +56,6 @@ const getSizeAndUnit = (size) => {
     }
 }
 
-
 // show table and para message...
 const showFilesData = () => {
 
@@ -66,13 +65,13 @@ const showFilesData = () => {
         fileTable.innerHTML = `<p class="no-files-para">No files uploaded yet 😓. Please upload a file 😉</p>`;
     } else {
 
-
         // sort the files array acc. the file extension
         uploadedFiles.sort((a, b) => {
-            let x = a.name.split(".")[1].toLowerCase();
-            let y = b.name.split(".")[1].toLowerCase();
+            let x = a.name.split(".").at(-1).toLowerCase();
+            let y = b.name.split(".").at(-1).toLowerCase();
 
             return x < y ? -1 : x > y ? 1 : 0;
+
         });
 
         // creating dynamic table
@@ -94,32 +93,35 @@ const showFilesData = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    ${uploadedFiles?.map((file, i) => (
+                ${uploadedFiles?.map((file, i) => (
             `<tr key=${i}>
-                <td>${i + 1}</td>
-                <td>${file.name.split(".").slice(0, -1).join(".")}</td>
-                <td>${getSizeAndUnit(file.size)}</td>
-                <td>
-                    <button id="more-info-btn-${i}" class="more-info-btn tooltip-wrapper">
-                        Info
-                        <i class="fa-solid fa-circle-info"></i>
-                        <div class="tooltip-content">
-                            <ul class="tooltip-content-list">
-                                <li class="tooltip-content-list-item border-b">Name <span>${file.name}<span></li></br>
-                                <li class="tooltip-content-list-item border-b">Ext. <span>${file.name.split(".").at(-1)}<span></li></br>
-                                <li class="tooltip-content-list-item border-b">Size <span>${getSizeAndUnit(file.size)}<span></li></br>
-                                <li class="tooltip-content-list-item border-b">Type <span>${file.type.split(".")[0]}</span></li></br>
-                                <li class="tooltip-content-list-item">Last Modified <span>${new Date(file.lastModified).toDateString()}<span></li>
-                            </ul>
-                        </div>
-                    </button>
-                </td>
-            </tr>`
+                        <td>${i + 1}</td>
+                        <td>${file.name.split(".").slice(0, -1).join(".")}</td>
+                        <td>${getSizeAndUnit(file.size)}</td>
+                        <td>
+                            <button id="more-info-btn-${i}" class="more-info-btn tooltip-wrapper">
+                                Info
+                                <i class="fa-solid fa-circle-info"></i>
+                                <div class="tooltip-content">
+                                    <ul class="tooltip-content-list">
+                                        <li class="tooltip-content-list-item border-b">Name <span>${file.name}<span></li></br>
+                                        <li class="tooltip-content-list-item border-b">Ext. <span>${file.name.split(".").at(-1)}<span></li></br>
+                                        <li class="tooltip-content-list-item border-b">Size <span>${getSizeAndUnit(file.size)}<span></li></br>
+                                        <li class="tooltip-content-list-item border-b">Type <span>${file.type.split(".")[0]}</span></li></br>
+                                        <li class="tooltip-content-list-item">Last Modified <span>${new Date(file.lastModified).toDateString()}<span></li>
+                                    </ul>
+                                </div>
+                            </button>
+                        </td>
+                    </tr>`
         ))}
                 </tbody>
             </table>`
 
         fileTable.innerHTML = tableHTML;
+
+        // removing the unwanted character
+        fileTable?.firstChild.remove();
 
     }
 };
